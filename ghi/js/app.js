@@ -27,11 +27,37 @@ window.addEventListener('DOMContentLoaded', async () => {
             // Figure out what to do when the response is bad
         } else {
           const data = await response.json();
+          for (let conference of data.conferences) {
+          const newHtml = `<div class="card" aria-hidden="true">
+                
+                <div class="card-body">
+                    <h5 class="card-title placeholder-glow">
+                        <span class="placeholder col-6"></span>
+                    </h5>
+                    <p class="card-text placeholder-glow">
+                        <span class="placeholder col-7"></span>
+                        <span class="placeholder col-4"></span>
+                        <span class="placeholder col-4"></span>
+                        <span class="placeholder col-6"></span>
+                        <span class="placeholder col-8"></span>
+                    </p>
+                </div>
+                <div class="card-footer placeholder-glow">
+                    <span class="placeholder"></span>
+                </div>
+            </div>
+            `
+            const loading = document.querySelector(".row");
+            console.log(loading);
+            loading.innerHTML += newHtml;
+          }
 
           for (let conference of data.conferences) {
               const detailUrl = `http://localhost:8000${conference.href}`;
               const detailResponse = await fetch(detailUrl);
               if (detailResponse.ok) {
+                  const loaded = document.querySelector(".card");
+                  loaded.remove();
                   const details = await detailResponse.json();
                   const title = details.conference.name;
                   const description = details.conference.description;
