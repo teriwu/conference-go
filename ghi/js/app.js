@@ -27,6 +27,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             // Figure out what to do when the response is bad
         } else {
           const data = await response.json();
+          // Placeholder when loading cards
           for (let conference of data.conferences) {
           const newHtml = `<div class="card" aria-hidden="true">
                 
