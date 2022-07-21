@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             console.log(loading);
             loading.innerHTML += newHtml;
           }
-
+        
           for (let conference of data.conferences) {
               const detailUrl = `http://localhost:8000${conference.href}`;
               const detailResponse = await fetch(detailUrl);
