@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const response = await fetch(url, fetchOptions);
       if (response.ok) {
         window.location.href = '/';
+        document.getElementById("navbarSupportedContent").classList.remove("d-none");
       } else {
         console.error(response);
       }
