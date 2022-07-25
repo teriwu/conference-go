@@ -3,8 +3,8 @@ function App(props) {
     return null;
   }
   return (
-    <div>
-      <table>
+    <div className="container">
+      <table className="table table-striped">
         <thead>
           {/* for (let attendee of props.attendees) {
             <tr>
