@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+function App(props) {
+  if (props.attendees === undefined) {
+    return null;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <table>
+        <thead>
+          {/* for (let attendee of props.attendees) {
+            <tr>
+              <td>{ attendee.name }</td>
+              <td>{ attendee.conference }</td>
+            </tr>
+          } */}
+          {props.attendees.map(attendee => {
+            return (
+              <tr key={attendee.href}>
+                <td>{ attendee.name }</td>
+                <td>{ attendee.conference }</td>
+              </tr>
+            );
+          })}
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
     </div>
   );
 }
