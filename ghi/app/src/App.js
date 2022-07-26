@@ -1,31 +1,21 @@
+import Nav from "./Nav";
+import AttendeesList from "./AttendeesList";
+import LocationForm from "./LocationForm";
+import ConferenceForm from "./ConferenceForm";
+
 function App(props) {
   if (props.attendees === undefined) {
     return null;
   }
   return (
-    <div className="container">
-      <table className="table table-striped">
-        <thead>
-          {/* for (let attendee of props.attendees) {
-            <tr>
-              <td>{ attendee.name }</td>
-              <td>{ attendee.conference }</td>
-            </tr>
-          } */}
-          {props.attendees.map(attendee => {
-            return (
-              <tr key={attendee.href}>
-                <td>{ attendee.name }</td>
-                <td>{ attendee.conference }</td>
-              </tr>
-            );
-          })}
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
-    </div>
+    <>
+      <Nav />
+      <div className="container">
+        <ConferenceForm />
+        {/* <LocationForm /> */}
+        {/* {<AttendeesList attendees={props.attendees} />} */}
+      </div>
+    </>
   );
 }
 
