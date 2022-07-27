@@ -10,7 +10,7 @@ function AttendeesList(props) {
             <tbody>
                 {props.attendees.map(attendee => {
                     return (
-                        <tr key={attendee.href}>
+                        <tr key={ attendee.href }>
                             <td>{ attendee.name }</td>
                             <td>{ attendee.conference }</td>
                         </tr>
@@ -18,7 +18,7 @@ function AttendeesList(props) {
                 })}
             </tbody>
         </table>
-        );
-  }
+    );
+}
   
-  export default AttendeesList;
+export default AttendeesList;

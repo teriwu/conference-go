@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", async () => {
             const data = await response.json();
             const selectTag = document.getElementById("conference");
             for (let conference of data.conferences) {
-                let option = document.createElement("option");
+                const option = document.createElement("option");
                 option.value = conference.id;
                 option.innerText = conference.name;
                 selectTag.appendChild(option);
