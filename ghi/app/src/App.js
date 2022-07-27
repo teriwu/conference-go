@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import MainPage from "./MainPage";
 import AttendeesList from "./AttendeesList";
 import AttendConferenceForm from "./AttendConferenceForm";
 import ConferenceForm from "./ConferenceForm";
@@ -19,6 +20,7 @@ function App(props) {
         {/* <LocationForm /> */}
         {/* {<AttendeesList attendees={props.attendees} />} */}
         <Routes>
+          <Route index element={<MainPage />} />
           <Route path="attendees" element={<AttendeesList attendees={props.attendees} />} />
           <Route path="attendees/new" element={<AttendConferenceForm />} />
           <Route path="conferences/new" element={<ConferenceForm />} />
